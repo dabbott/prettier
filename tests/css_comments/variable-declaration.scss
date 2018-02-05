@@ -1,0 +1,14 @@
+$var: /* comment 1 */ all /* comment 2 */ !default /* comment 3 */;
+
+@mixin text-color {
+  /* comment 4 */
+  /* comment 5 */ $text-color /* comment 6 */ : /* comment 7 */ red /* comment 8 */ !default /* comment 9 */;
+  /* comment 10 */
+  color: $text-color;
+}
+
+.error {
+  /* comment 11 */
+  /* comment 12 */ $text-color /* comment 13 */ : /* comment 14 */ green /* comment 15 */ !global /* comment 16 */;
+  /* comment 17 */
+}
