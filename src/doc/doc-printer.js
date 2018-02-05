@@ -133,6 +133,10 @@ function fits(next, restCommands, width, options, mustBeFlat) {
       width -= util.getStringWidth(doc);
     } else {
       switch (doc.type) {
+        case "fixedWidth":
+          width -= doc.width;
+
+          break;
         case "concat":
           for (let i = doc.parts.length - 1; i >= 0; i--) {
             cmds.push([ind, mode, doc.parts[i]]);
@@ -220,6 +224,12 @@ function printDocToString(doc, options) {
       pos += util.getStringWidth(doc);
     } else {
       switch (doc.type) {
+        case "fixedWidth":
+          out.push(printDocToString(doc.contents, options).formatted);
+
+          pos += doc.width;
+
+          break;
         case "cursor":
           out.push(cursor.placeholder);
 

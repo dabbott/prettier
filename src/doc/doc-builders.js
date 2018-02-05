@@ -144,6 +144,10 @@ function addAlignmentToDoc(doc, size, tabWidth) {
   return aligned;
 }
 
+function fixedWidth(doc, width) {
+  return { type: "fixedWidth", contents: doc, width };
+}
+
 module.exports = {
   concat,
   join,
@@ -164,5 +168,6 @@ module.exports = {
   addAlignmentToDoc,
   markAsRoot,
   dedentToRoot,
-  dedent
+  dedent,
+  fixedWidth
 };
